@@ -57,7 +57,7 @@ def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
      lin_gauss_transformed_p = SMASH_linear_Gauss(Y_scaled, Cords) # Test using linear kernel on five Gaussian transformed versions of the co-ordinates
      lin_cosine_transformed_p = SMASH_linear_Cosine(Y_scaled, Cords) # Test using linear kernel on five Cosine transformed versions of the co-ordinates
      lin_gauss_cosine_p = ACAT(np.vstack((lin_gauss_transformed_p, lin_cosine_transformed_p))) # Combine the last two tests (their p-values) using a Cauchy combination rule
-     lin_all_combined_p = ACAT(np.vstack((lin_direct_p, lin_gauss_transformed_p, lin_cosine_transformed_p))) # Combine all three tests (their p-values) using a Cauchy combination rule
+     lin_all_combined_p = ACAT(np.vstack((lin_direct_p, lin_gauss_transformed_p, lin_cosine_transformed_p))) # Combine all three tests (their p-values) using a Cauchy combination rule (eqv. to SPARK-X)
      print("Finished Mean Tests!")
      
      # Perform the covariance-based test involving Gaussian and Cosine kernel covariance matrices 
@@ -119,7 +119,7 @@ def Expression_plot(Data, Gene_name, s = 0.5, cmap = 'viridis_r'):
     plt.figure()
     ax = plt.gca()
     ax.invert_yaxis()
-    ax.set_title(label = Gene_name, loc = 'center')     #+ ' (Adj. p-value = )' + str(round(adj_pval.values, 5)),
+    ax.set_title(label = Gene_name, loc = 'center')
     im = ax.scatter(Data['X'], Data['Y'], s = s, alpha = 1, c = Data[Gene_name]/max(Data[Gene_name]), cmap = cmap)
     divider = make_axes_locatable(ax)
     cax = divider.append_axes("right", size="3%", pad=0.05)     
