@@ -27,7 +27,13 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 1. Zhang, K., Peters, J., Janzing, D., Sch¨olkopf, B.: Kernel-based conditional independence test and application in causal discovery. arXiv preprint arXiv:1202.3775 (2012)
 
-2. Zhu, J., Sun, S., Zhou, X.: Spark-x: non-parametric modeling enables scalable and robust detection of spatial expression patterns for large spatial transcriptomic studies. Genome Biology 22(1), 1–25 (2021)
+2. Maynard, K.R., Collado-Torres, L., Weber, L.M., Uytingco, C., Barry, B.K., Williams, S.R., Catallini, J.L., Tran, M.N., Besich, Z., Tippani, M., et al.: Transcriptome-scale spatial gene expression in the human dorsolateral
+prefrontal cortex. Nature neuroscience 24(3), 425–436 (2021)
 
-3. Svensson, V., Teichmann, S.A., Stegle, O.: Spatialde: identification of spatially variable genes. Nature methods 15(5), 343–346 (2018)
+3. Moffitt, J.R., Bambah-Mukku, D., Eichhorn, S.W., Vaughn, E., Shekhar, K., Perez, J.D., Rubinstein, N.D., Hao, J., Regev, A., Dulac, C., et al.: Molecular, spatial, and functional single-cell profiling of the hypothalamic
+preoptic region. Science 362(6416), 5324 (2018)
+
+4. Zhu, J., Sun, S., Zhou, X.: Spark-x: non-parametric modeling enables scalable and robust detection of spatial expression patterns for large spatial transcriptomic studies. Genome Biology 22(1), 1–25 (2021)
+
+5. Svensson, V., Teichmann, S.A., Stegle, O.: Spatialde: identification of spatially variable genes. Nature methods 15(5), 343–346 (2018)
 
