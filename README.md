@@ -25,7 +25,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 ### Data provided
 
-Two datasets: (1) a mouse cerebellum data collected using the MERFISH platform [3] and (2)  a human DLPFC data collected using the 10X Visium platform [4], are provided as pickled python objects in the [Data](Data) folder. 
+Two datasets: (1) a mouse cerebellum data collected using the MERFISH platform [3], and (2)  a human DLPFC data collected using the 10X Visium platform [4], are provided as pickled python objects in the [Data](Data) folder. 
 
 ### References
 
