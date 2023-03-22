@@ -5,7 +5,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 
 ### Overview of the main functions
--  The function SMASH fits our proposed method. Along with the p-values corresponding to the method SMASH, the function also returns two additional results, one corresponding to the method SPARK-X [1] and the other result corresponding to an approximate version of the method SpatialDE [2]. 
+-  The function SMASH fits our proposed method. Along with the p-values corresponding to SMASH, the function also returns two additional results, one corresponding to the method SPARK-X [1] and the other result corresponding to an approximate version of the method SpatialDE [2]. 
 
 -  The function Expression_plot can be used for basic visualization of a gene expression  in cells/spots.
 
@@ -13,7 +13,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 ### Jupyter notebooks with function usage and two real data analyses
 - The Jupyter notebook entitled [Merfish_analysis.ipynb](Merfish_analysis.ipynb) provides a thorough guide on how to use the package on a mouse cerebellum data collected using the MERFISH platform [3]. This notebook explains all the arguments that can be tweaked in the main functions. 
 
-- The Jupyter notebook entitled "Visium_analysis.ipynb" provides a guide on how to use the package on a human DLPFC data collected using the 10X Visium platform [4]. 
+- The Jupyter notebook entitled [Visium_analysis.ipynb](Visium_analysis.ipynb) provides a guide on how to use the package on a human DLPFC data collected using the 10X Visium platform [4]. 
 
 
 ### Python modules required to be installed
@@ -23,6 +23,9 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 * We recommend using Anaconda (https://www.anaconda.com/products/individual) and Python version > 3.9. 
 
+### Data provided
+
+Two datasets: (1) a mouse cerebellum data collected using the MERFISH platform [3] and (2)  a human DLPFC data collected using the 10X Visium platform [4], are provided as pickled python objects in the [Visium_analysis.ipynb](Data) folder. 
 
 ### References
 
