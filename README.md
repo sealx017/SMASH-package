@@ -11,7 +11,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 
 ### Jupyter notebooks with function usage and two real data analyses
-- The Jupyter notebook entitled "Merfish_analysis.ipynb" provides a thorough guide on how to use the package on a mouse cerebellum data collected using the MERFISH platform [3]. This notebook explains all the arguments that can be tweaked in the main functions. 
+- The Jupyter notebook entitled [Merfish_analysis.ipynb](Merfish_analysis.ipynb) provides a thorough guide on how to use the package on a mouse cerebellum data collected using the MERFISH platform [3]. This notebook explains all the arguments that can be tweaked in the main functions. 
 
 - The Jupyter notebook entitled "Visium_analysis.ipynb" provides a guide on how to use the package on a human DLPFC data collected using the 10X Visium platform [4]. 
 
