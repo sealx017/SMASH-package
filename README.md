@@ -18,8 +18,8 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 ### Python modules required to be installed
 - The package and the notebooks provided, requires the following modules to be pre-installed,
-  1. matplotlib, install using: "conda install -c conda-forge matplotlib"  (https://matplotlib.org/)
-  2. matplotlib_venn, install using: "conda install -c conda-forge matplotlib-venn"  (https://pypi.org/project/matplotlib-venn/)
+  1. matplotlib, install using: "pip install matplotlib"  (https://matplotlib.org/)
+  2. matplotlib_venn, install using: "pip install matplotlib-venn"  (https://pypi.org/project/matplotlib-venn/)
   3. blosc, install using: "pip install blosc" (https://anaconda.org/anaconda/blosc)
 
 * We recommend using Anaconda (https://www.anaconda.com/products/individual) and Python version > 3.9. 
