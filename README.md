@@ -1,7 +1,7 @@
 # Python implementation of SMASH
 
 ### How to install?
-We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the path (which currently looks like, path = "/Users/sealso/Documents/GitHub/SMASH-package") to the location of the unpacked SMASH-package folder in their system. 
+We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the path (which currently looks like, path = "/Users/sealso/Documents/GitHub/SMASH-package") to the location of the unpacked SMASH-package-main folder in their system. 
 
 
 ### Overview of the main functions
@@ -20,7 +20,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 - The package and the notebooks provided, requires the following modules to be pre-installed,
   1. matplotlib, install using: "conda install -c conda-forge matplotlib"  (https://matplotlib.org/)
   2. matplotlib_venn, install using: "conda install -c conda-forge matplotlib-venn"  (https://pypi.org/project/matplotlib-venn/)
-  3. blosc, install using: "conda install -c conda-forge blosc" (https://anaconda.org/anaconda/blosc)
+  3. blosc, install using: "pip install blosc" (https://anaconda.org/anaconda/blosc)
 
 * We recommend using Anaconda (https://www.anaconda.com/products/individual) and Python version > 3.9. 
 
