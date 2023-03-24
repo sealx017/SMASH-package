@@ -13,13 +13,13 @@ from Pvalue_adjustments import ACAT, Min_p
 from Testing_functions import SMASH_linear, SMASH_linear_Gauss, SMASH_linear_Cosine, SMASH_single_asym_test
 
 def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
-     ''' Run SMASH on the gene and location arrays
+     ''' Run SMASH on the gene and location dataframes
     
         Parameters
         ----------
         Y: A pandas dataframe of the gene expression profiles, rows representing cells/spots and columns represeneting genes
         
-        Cords: A pandas dataframe of 2D spatial co-ordinates (xy co-ordinates)
+        Cords: A pandas dataframe of 2D spatial co-ordinates (xy co-ordinates), rownames of Cords should match with that of Y
                        
         len_l: An integer specifying how many lengthscale and period values to consider in the kernel covariance matrices.
                Default is 10
