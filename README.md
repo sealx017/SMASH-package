@@ -5,7 +5,7 @@ We recommend downloading the Github repository as a ZIP file and unpacking it. T
 
 
 ### Overview of the main functions
--  The function SMASH fits our proposed method. Along with the p-values corresponding to SMASH, the function also returns two additional results, one corresponding to the method SPARK-X [1] and the other result corresponding to an approximate version of the method SpatialDE [2]. 
+-  The function SMASH fits our proposed method. Along with the p-values corresponding to SMASH, the function also returns two additional results corresponding to approximated versions of the two methods SPARK-X [1] and SpatialDE [2]. 
 
 -  The function Expression_plot can be used for basic visualization of a gene expression  in cells/spots.
 

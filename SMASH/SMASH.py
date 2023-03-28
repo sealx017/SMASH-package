@@ -112,7 +112,7 @@ def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
          SPARKX = pd.DataFrame(np.hstack((np.array(Gene_names).reshape(p, 1), lin_all_combined_p.reshape(p, 1)))); SPARKX = SPARKX.set_axis(['Gene', 'p-val'], axis = 1)
          SpatialDE_approx = pd.DataFrame(np.hstack((np.array(Gene_names).reshape(p, 1), comb_pvals.reshape(p, 1)))); SpatialDE_approx = SpatialDE_approx.set_axis(['Gene', 'p-val'], axis = 1)
          SMASH = pd.DataFrame(np.hstack((np.array(Gene_names).reshape(p, 1), final_pvals.reshape(p, 1)))); SMASH = SMASH.set_axis(['Gene', 'p-val'], axis = 1)
-         return {'SPARK-X': SPARKX, 'SpatialDE Approx.': SpatialDE_approx, 'SMASH': SMASH}
+         return {'SPARK-X Approx.': SPARKX, 'SpatialDE Approx.': SpatialDE_approx, 'SMASH': SMASH}
         
 
 def Expression_plot(Data, Gene_name, s = 0.5, cmap = 'viridis_r'):
