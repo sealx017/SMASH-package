@@ -18,7 +18,7 @@ def SMASH_linear(Y, Cords):
     XTX = sgemm(alpha=1, a = X, b =  X, trans_a = 1)
     XTX_inv = np.linalg.inv(XTX)   
     beta = np.dot(XTX_inv, sgemm(alpha=1, a = X, b = Y, trans_a = 1))
-    var_beta = XTX
+    var_beta = XTX/np.mean((Y-np.dot(X, beta))**2)
     var_betaTbeta = sgemm(alpha=1,  a = var_beta, b = beta, trans_a = 1)
     for i in range(p):
         test[i] = sgemm(alpha=1, a = beta[:,i], b = var_betaTbeta[:,i], trans_a =1)
