@@ -1,13 +1,13 @@
 # Python implementation of SMASH
 
 ### How to install?
-We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the path (which currently looks like, path = "/Users/sealso/Documents/GitHub/SMASH-package") to the location of the unpacked SMASH-package-main folder in their system. 
+We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the "path" mentioned at the start of each notebook (which currently looks like, path = "/Users/sealso/Documents/GitHub/SMASH-package") to the location of the unpacked SMASH-package-main folder in their system. 
 
 
 ### Overview of the main functions
 -  The function SMASH fits our proposed method. Along with the p-values corresponding to SMASH, the function also returns two additional results corresponding to approximate versions of the two methods SPARK-X [1] and SpatialDE [2]. 
 
--  The function Expression_plot can be used for basic visualization of a gene expression  in cells/spots.
+-  The function Expression_plot can be used for basic visualization of a gene expression in cells/spots.
 
 
 ### Jupyter notebooks with function usage and two real data analyses
