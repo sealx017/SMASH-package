@@ -1,7 +1,7 @@
 # Python implementation of SMASH
 
 ### How to install?
-We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the "path" mentioned at the start of each notebook (which currently looks like, path = "/Users/sealso/Documents/GitHub/SMASH-package") to the location of the unpacked SMASH-package-main folder in their system. 
+We recommend downloading the Github repository as a ZIP file and unpacking it. The users need to change the "path" (currently, path = "/Users/sealso/Documents/GitHub/SMASH-package") mentioned at the start of each notebook  to the location of the unpacked SMASH-package-main folder in their system. 
 
 
 ### Overview of the main functions
