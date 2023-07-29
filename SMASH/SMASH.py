@@ -12,7 +12,7 @@ from Kernel_definitions import get_l_limits, All_kernel_R2
 from Pvalue_adjustments import ACAT, Min_p
 from Testing_functions import SMASH_linear, SMASH_linear_Gauss, SMASH_linear_Cosine, SMASH_single_asym_test
 
-def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
+def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All", forcePD = "False"):
      ''' Run SMASH on the gene and location dataframes
     
         Parameters
@@ -30,6 +30,10 @@ def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
         kernel_covariance: A string specifying if both Gaussian and Cosine kernel covariance matrices to be used. Default is "All"
                 which implies both the types of kernel covariance matrices will be used. If mean_only = "TRUE", this
                 parameter is redundant as neither of the kernel covariance matrices will be used
+        
+        forcePD: "True" or" "False" where the latter implies that the cosine kernel matrix will be considered as is, 
+                 without any adjustement to force it to be positive definite. If "True", eigenvalue-truncation based adjustment                    
+                 will be performed.        
                     
         Returns
         -------
@@ -69,7 +73,7 @@ def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
          if kernel_covariance == "All": # "All" implies that both Gaussian and Cosine kernel covariance matrices will be used
             pvals = np.zeros(( 2*len(l_series), p)); r = 0; 
             for l in tqdm(l_series): # Loop over ten (or, len_l many) values of the lengthscale (period)
-              dist_both =  All_kernel_R2(R2, l, which = "Both") 
+              dist_both =  All_kernel_R2(R2, l, which = "Both", forcePD = forcePD) 
               dist1 = dist_both[0]; dist2 = dist_both[1] # Obtain the Gaussian (at index 0) and Cosine (at index 1) kernel covariance matrices for a particular value of the lengthscale (or, period) l
               dist1 = dist1 - 1/n*np.repeat(np.sum(dist1, axis = 0)[np.newaxis,:], n, axis = 0) # Row and column scaling of the Gaussian kernel covariance matrix
               dist1 = dist1 - 1/n*np.repeat(np.sum(dist1, axis = 1)[:,np.newaxis], n, axis = 1) 
@@ -92,10 +96,10 @@ def SMASH(Y, Cords, len_l = 10, mean_only = "False", kernel_covariance = "All"):
               k1 = trace_dist**2/2/trace_dist2; theta1 = 2*trace_dist2/trace_dist
               pvals[r,:] = SMASH_single_asym_test(Y_scaled, dist1, k1, theta1);
               r = r + 1
-         elif kernel_covariance == "Cosine":  # "Cosine" implies that only COsine kernel covariance matrices will be used
+         elif kernel_covariance == "Cosine":  # "Cosine" implies that only Cosine kernel covariance matrices will be used
           pvals = np.zeros(( len(l_series), p)); r = 0; 
           for l in tqdm(l_series):
-              dist1 =  All_kernel_R2(R2, l, which = "Cosine")[0]
+              dist1 =  All_kernel_R2(R2, l, which = "Cosine", forcePD = forcePD)[0]
               dist1 = dist1 - 1/n*np.repeat(np.sum(dist1, axis = 0)[np.newaxis,:], n, axis = 0)
               dist1 = dist1 - 1/n*np.repeat(np.sum(dist1, axis = 1)[:,np.newaxis], n, axis = 1)
               trace_dist = np.sum(np.diag(dist1)); trace_dist2 = np.sum(dist1 *  dist1)

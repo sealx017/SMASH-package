@@ -19,19 +19,31 @@ def get_l_limits(X):
     return l_min, l_max, R2
 
 
-def All_kernel_R2(R2, l, which = "Both"):
+def All_kernel_R2(R2, l, which = "Both", forcePD = "False"):
     '''
     Returns Gaussian and Cosine kernel covariance matrices for a particular choice of the lengthscale (or, period) paramter l. 
     which = "Both" returns both the matrices, while the other two options ("Gaussian" or "Cosine") return only the corresponding matrices
-    
+    forcePD = "False" implies that the cosine kernel matrix will be considered as is, without any adjustement to force it to be positive definite.
+    If "True", eigenvalue-truncation based adjustment will be performed.
+
     '''
     Both_kernels = []
     R2 = R2.astype(float)
     if which == "Both":
       Both_kernels.append(np.exp(-R2 / (2 * l ** 2)))
-      Both_kernels.append(np.cos(2 * np.pi * np.sqrt(R2) / l))
+      Cos = np.cos(2 * np.pi * np.sqrt(R2) / l)
+      if forcePD == "True":
+        S, U = np.linalg.eigh(Cos) 
+        S = np.clip(S, 1e-8, None)
+        Cos = np.dot(np.dot(U, np.diag(S)), U.T)
+      Both_kernels.append(Cos) 
     elif which == "Gaussian":
       Both_kernels.append(np.exp(-R2 / (2 * l ** 2)))
     elif which == "Cosine":
-      Both_kernels.append(np.cos(2 * np.pi * np.sqrt(R2) / l))
+      Cos = np.cos(2 * np.pi * np.sqrt(R2) / l)
+      if forcePD == "True":
+        S, U = np.linalg.eigh(Cos) 
+        S = np.clip(S, 1e-8, None)
+        Cos = np.dot(np.dot(U, np.diag(S)), U.T)
+      Both_kernels.append(Cos)    
     return Both_kernels
